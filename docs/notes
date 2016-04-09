@@ -20,3 +20,14 @@ in another terminal, publisher a message on our topic:
 the message should appear in the subscriber terminal.
 
 
+ESP8266
+
+Be sure to short across REST and GPIO16 on the ESP-12E
+this will allow the wake-up to trigger the reset.
+Otherwise, the ESP will shutdown and not wake its self up.
+
+Use a capacitor (22uf or more?) on the power to handle surges when sending WiFi.
+
+Currently using a surplus SO323(?) SMD LDO regulator 3V3.  Seems to work fine.
+
+
