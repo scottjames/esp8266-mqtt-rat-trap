@@ -1,0 +1,22 @@
+
+Notes about setting up MQTT
+
+* Disable or open Ubuntu firewall on pc.
+    sudo ufw disable
+
+* Shutdown mosquitto daemon so we can run in forground.
+    sudo /etc/init.d/mosquitto shutdown
+
+
+in a terminal, launch mosquitto mqtt broker:
+    mosquitto
+
+in another terminal, launch a subscriber to listen to events on our topic:
+    mosquitto_sub -h 192.168.10.200 -t trapStatus
+
+in another terminal, publisher a message on our topic:
+    mosquitto_pub -h 192.168.10.200 -t trapStatus -m 'hello'
+
+the message should appear in the subscriber terminal.
+
+
